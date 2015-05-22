@@ -1,0 +1,137 @@
+Chapter 1
+An abstract class can’t be instantiated
+
+A class that is marked final cannot be extended by another class
+
+An interface cannot be marked as final.An interface is abstract by default and
+marking it with final will prevent your interface from compiling.
+
+You can define static methods to access or manipulate static variables
+
+Chapter 2
+You can assign integer literals in base decimal, binary, octal, and hexadecimal. For
+octal literals, use the prefix 0; for binary, use the prefix 0B or 0b; and for hexadecimal,
+use the prefix 0x or 0X.
+
+With Java version 7, you can also use underscores as part of the literal values, which
+helps group the individual digits or letters of the literal values and is much more readable.
+The underscores have no effect on the values. The following is valid code:
+long baseDecimal = 100_267_760;
+long octVal = 04_13;
+long hexVal = 0x10_BA_75;
+long binVal = 0b1_0000_10_11;
+
+A valid identifier can use a currency sign (in any position): $, £, ?,
+¥ and others -> these are valid: $rate, £Value, _sine
+
+All the relational and logical operators return a boolean value, which
+can be assigned to a primitive boolean variable.
+
+the short-circuit operator
+AND has higher operator precedence than the short-circuit operator OR
+
+garbage collector: low-priority thread that marks the objects ELIGIBLE for garbage collection in the JVM
+ and then clears the memory of these objects. 
+You can determine only which objects are eligible to be garbage collected.
+You can NEVER determine when a particular object WILL be garbage collected. A user can’t
+control or determine the execution of a garbage collector. It’s controlled by the JVM.
+
+A char value can be assigned to an int value, but a char array CANNOT be assigned to an int array.
+
+========
+public int daysOffWork(int... days){
+  int daysOff = 0;
+  for (int i = 0; i < days.length; i++)
+    daysOff += days[i];
+  return daysOff;
+}
+
+
+The ellipsis (...) that follows the data type indicates that the method parameter days
+may be passed an array or multiple comma-separated values.
+You can define only ONE variable argument in a parameter list, and it should be the
+LAST variable in the parameter list. If you don’t comply with these two rules, your code
+won’t compile
+========
+A constructor does have an implicit return type, which is the class in which it’s defined.
+It creates and returns an object of its class, which is why you can’t define a return type for a constructor
+
+Defining a return type for a constructor, means that Java will treat it as another
+method, not a constructor, which also implies that it won’t be called implicitly when
+you create an object of its class.
+
+Methods can’t be defined as overloaded methods if they only differ in their access
+modifiers.
+
+==
+An initializer block is defined within a class, not as a part of a method. It executes for
+every object that’s created for a class.
+class Employee {
+  {
+  System.out.println("Employee:initializer");
+  }
+}
+==
+
+If you define both an initializer and a constructor for a class, both of these will execute.
+The initializer block will execute prior to the constructor.
+
+Unlike constructors, an initializer block can’t accept method parameters.
+
+
+
+The if-else-if-else is an if-else construct in which the else part defines another if construct.
+
+============================
+When the code control
+enters the label matching TUE in the switch construct, it’ll execute all of the code
+until it encounters a break statement or it reaches the end of the switch statement.
+---
+String day = "SUN";
+  switch (day) {
+    case "MON":
+    case "TUE":
+    case "WED":
+    case "THU": System.out.println("Time to work");
+      break;
+    case "FRI": System.out.println("Nearing weekend");
+      break;
+    case "SAT":
+    case "SUN": System.out.println("Weekend!");
+      break;
+    default: System.out.println("Invalid day?");
+}
+---
+====================
+
+switch statement accepts arguments of type char, byte, short, int, String, Byte, Short, Integer, Character, enum.
+
+NULL ISN’T ALLOWED AS A CASE LABEL
+
+In the absence of the break statement, control will fall through
+the remaining code and execute the code corresponding to all the remaining cases
+that follow that matching case
+
+Don’t forget to use a semicolon (;) to end the do-while loop after specifying
+its condition. Even some experienced programmers overlook this step!
+
+The regular for loop, although cumbersome to use, is much more powerful than the
+enhanced for loop
+
+a final variable can be initialized only once
+
+All the methods defined in the class String, such as substring, concat, toLowerCase,
+toUpperCase, trim, replace and so on create and returns a new String object. They don’t modify
+the existing array value
+
+====
+String exam = "Oracle";
+String result = exam.substring(2, 4);
+System.out.println(result);   ====>  Prints ac
+
+the substring method doesn’t include the character at the end position.
+====
+
+trim() removes only the leading and trailing whitespaces of a String, not the spaces within a String.
+
+.startsWith() accepts string argument, so .startsWith('A') results to compilation error
