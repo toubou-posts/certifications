@@ -1,3 +1,8 @@
+Book: OCA Java SE 7 Programmer I Certification Guide, Mala Gupta
+Description: A short list containing important points throughout this book, according to my point of view.
+
+-------------
+
 Chapter 1
 An abstract class can’t be instantiated
 
