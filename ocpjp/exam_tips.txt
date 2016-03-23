@@ -1,0 +1,7 @@
+CHAPTER 1 Java class design
+
+Calls to the overloaded methods are resolved during compilation.
+
+For primitive method arguments, if a call to an overloaded method is dubious, the code won’t compile.
+
+When the Java compiler differentiates methods, it doesn’t consider their return types. So you can’t define overloaded methods with the same parameter list and different return types.

@@ -1,0 +1,9 @@
+CHAPTER 1 Java class design
+
+
+A derived class can also overload the methods inherited from its base class.
+
+The overloaded methods are bound at compile time and not runtime (that is, we only mind for the reference variable (emp, in our case): Employee emp = new CEO();  )
+To resolve the call to the overloaded methods, the compiler considers the type of variable that’s used to refer to an object.
+
+An int literal value can be passed to a variable of type double.
