@@ -24,3 +24,7 @@ Recursive constructor invocation isn’t allowed: A constructor can’t call its
 The static methods of a base can’t be overridden, but they can be hidden by defining methods with the same signature in the derived class.
 
 Virtual method invocation is the invocation of the correct overridden method, which is based on the type of the object referred to by an object reference and not by the object reference itself. It’s determined at runtime, not at compilation time.
+
+A derived class can’t override a base class method marked final.
+
+When the overriding method returns a subclass of the return type of the overridden method, it’s known as a covariant return type.

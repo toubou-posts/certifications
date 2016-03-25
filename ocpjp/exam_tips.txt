@@ -7,3 +7,7 @@ For primitive method arguments, if a call to an overloaded method is dubious, th
 When the Java compiler differentiates methods, it doesn’t consider their return types. So you can’t define overloaded methods with the same parameter list and different return types.
 
 If a parent or child class defines static initializer block(s), they execute before all parent and child class constructors and instance initializers—first for the parent and then for the child class.
+
+An overriding method can throw any unchecked exception (RuntimeException or Error) even if the overridden method doesn’t. The unchecked exceptions aren’t part of the method signature and aren’t checked by the compiler.
+
+It’s the reference variable type that dictates which overloaded method will be chosen. This choice is made at compilation time.
