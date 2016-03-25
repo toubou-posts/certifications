@@ -1,0 +1,135 @@
+Book: OCA Java SE 7 Programmer I Certification Guide, Mala Gupta
+Description: A short list containing important points (from the "Exam Tips" sections), according to my point of view.
+
+----------------
+
+Chapter 1
+A concise but not too simple way of stating the previous rule is this: a
+derived class can inherit and access protected members of its base class, regardless
+of the package in which it’s defined. A derived class in a separate package
+can’t access protected members of its base class using reference variables.
+
+Default access can be compared to package-private (accessible
+only within a package) and protected access can be compared to packageprivate
++ kids (“kids” refer to derived classes). Kids can access protected
+methods only by inheritance and not by reference (accessing members by
+using the dot operator on an object).
+
+An abstract class may or may not define an abstract method;
+you can define an abstract class without any abstract methods. But a concrete
+class can’t define an abstract method.
+
+A method with an empty body isn’t an abstract method.
+
+Don’t be tricked by code that tries to apply the nonaccess modifier
+abstract to a variable. Such code won’t compile.
+
+A static variable can be accessed using the name of the object
+reference variable or the name of a class.
+
+Static methods and variables can’t access the instance members of
+a class.
+
+non-static variables and methods can access static variables and methods (because the static members of a class exist even if no instances of the class exist).
+
+None of the different types of variables (instance, static, local, and method parameters)
+can be defined as abstract.
+
+Chapter 2
+Primitive variables store the actual values, whereas object reference
+variables store the addresses of the objects they refer to.
+
+You can’t use the assignment operators to
+assign a boolean value to variables of type char, byte,
+int, short, long, float, or double, or vice versa.
+
+You cannot compare incomparable values. For example, you cannot
+compare a boolean with an int, a char, or a floating-point number. If
+you try to do so, your code will not compile.
+
+The result of the relational operation is always a boolean value.
+You can’t assign the result of a relational operation to a variable of type char,
+int, byte, short, long, float, or double.
+
+You can’t compare primitive values by using the assignment operator, = .
+Chapter3
+An object is marked as eligible to be garbage collected when it can
+no longer be accessed, which can happen when the object goes out of scope.
+It can also happen when an object’s reference variable is assigned an explicit
+null value or is reinitialized.
+
+You can be sure only about which objects are marked for garbage collection.
+You can never be sure exactly when the object will be garbage collected.
+Watch for questions with wordings such as “which objects are sure to be collected
+during the next GC cycle,” for which the real answer can never be known.
+
+You can optionally assign the value returned by a method to a variable.
+If you don’t assign the returned value from a method, it’s neither a compilation
+error nor a runtime exception
+
+You can define a constructor using all four access modifiers: public,
+protected, default, and private.
+
+A constructor must not define any return type. Instead, it creates
+and returns an object of the class in which it’s defined. If you define a
+return type for a constructor, it’ll no longer be treated as a constructor.
+Instead, it’ll be treated as a regular method, even though it shares the same
+name as its class.
+
+Java defines a default constructor if and only if you don’t define
+a constructor. If a class doesn’t define a constructor, the compiler will add a
+default, no-argument constructor to the class. But if you modify the class later
+by adding a constructor to it, the Java compiler will remove the default, noargument
+constructor that it initially added to the class.
+
+A constructor can’t invoke a constructor by using its class’s name. (but the keyword "this")
+
+If present, the call to another constructor must be the first statement in
+a constructor.
+
+The terms encapsulation and information hiding are used interchangeably.
+By exposing object functionality only through methods, you can
+prevent your private variables from being assigned any values that don’t fit
+your requirements. One of the best ways to create a well-encapsulated class is
+to define its instance variables as private variables and allow access to these
+variables using public methods.
+
+When you pass a primitive variable to a method, its value remains
+the same after the execution of the method. The value doesn’t change,
+regardless of whether the method reassigns the primitive to another variable
+or modifies it.
+
+
+
+Chapter 5
+The if-else-if-else construct evaluates all of the conditions until
+it finds a match. A switch construct compares the argument passed to it with
+its labels.
+
+Watch out for questions in the exam that try to pass a primitive
+decimal type such as long, float or double to a switch statement. Code that tries
+to do so will not compile.
+
+Use the for-each loop to iterate arrays and collections. Don’t use it
+to initialize, modify, or filter them.
+
+The literal value for String is null
+
+Strings are immutable. Once initialized, a String value can’t be
+modified. All the String methods that return a modified String value return
+a new String object with the modified value. The original String value
+always remains the same.
+
+The substring method doesn’t include the character at the end
+position in its return value.
+
+The length of a String is one number greater than the position
+that stores its last character. The length of String "Shreya" is 6, but its last
+character, a, is stored at position 5 because the positions start at 0, not 1.
+
+When chained, the methods are evaluated from left to right.
+
+The operator == compares whether the reference variables refer to
+the same objects, and the method equals compares the String values for
+equality. Always use the equals method to compare two Strings for equality.
+Never use the == operator for this purpose.
