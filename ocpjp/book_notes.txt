@@ -28,3 +28,7 @@ Virtual method invocation is the invocation of the correct overridden method, wh
 A derived class can’t override a base class method marked final.
 
 When the overriding method returns a subclass of the return type of the overridden method, it’s known as a covariant return type.
+
+If a derived class defines a static method with the same name and signature as the one defined in its base class, it hides its base class method and doesn’t override it.You can’t override static methods.
+
+The static methods are bound at compile time.
