@@ -19,3 +19,5 @@ An overriding method can throw any unchecked exception (RuntimeException or Erro
 It’s the reference variable type that dictates which overloaded method will be chosen. This choice is made at compilation time.
 
 When a class extends another class, it can overload, override, or hide its base class methods. A class can’t override or hide its own methods—it can only overload its own methods.
+
+Constructors can’t be overridden because a base class constructor isn’t inherited by a derived class.
