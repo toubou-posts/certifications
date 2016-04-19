@@ -21,3 +21,5 @@ It’s the reference variable type that dictates which overloaded method will be
 When a class extends another class, it can overload, override, or hide its base class methods. A class can’t override or hide its own methods—it can only overload its own methods.
 
 Constructors can’t be overridden because a base class constructor isn’t inherited by a derived class.
+
+Read the questions on method hashCode() carefully. You might be questioned on incorrect, inappropriate, or inefficient overriding of hashCode().

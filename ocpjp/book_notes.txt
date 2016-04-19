@@ -34,3 +34,8 @@ If a derived class defines a static method with the same name and signature as t
 The static methods are bound at compile time.
 
 It’s important to override the nonfinal Object class methods (clone(), finalize(), toString(), equals(), hashCode() ) so that these classes can be used efficiently by other users.
+
+You can assign a reference variable of a derived class to a reference variable of its own type, its base classes, and the interfaces that it implements.
+
+Implicit downcasting isn’t allowed. You can’t assign reference variables of a base class
+to reference variables of its derived classes or to the interfaces that it doesn’t implement.
