@@ -22,4 +22,8 @@ When a class extends another class, it can overload, override, or hide its base 
 
 Constructors can’t be overridden because a base class constructor isn’t inherited by a derived class.
 
-Read the questions on method hashCode() carefully. You might be questioned on incorrect, inappropriate, or inefficient overriding of hashCode().
+Use Object as the parameter type to equals(). Using any other type will overload equals().
+
+An inappropriately overridden method equals() doesn’t mean compilation failure.
+
+In the absence of explicit casting, you’ll never get ClassCast-Exception—a RuntimeException. (explanation: At runtime, Java can determine the exact type of the object being casted. It throws a ClassCastException if you’re trying to cast types that aren’t allowed.)
