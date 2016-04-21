@@ -1,41 +1,29 @@
 CHAPTER 1 Java class design
 
+Calls to the overloaded methods are resolved during compilation.
 
-A derived class can also overload the methods inherited from its base class.
+For primitive method arguments, if a call to an overloaded method is dubious, the code won't compile.
 
-The overloaded methods are bound at compile time and not runtime (that is, we only mind for the reference variable (emp, in our case): Employee emp = new CEO();  )
-To resolve the call to the overloaded methods, the compiler considers the type of variable that’s used to refer to an object.
+When the Java compiler differentiates methods, it doesn't consider their return types. So you can't define overloaded methods with the same parameter list and different return types.
 
-An int literal value can be passed to a variable of type double.
+When the Java compiler differentiates methods, it doesn't consider their return types. So you can't define overloaded methods with the same parameter list and different return types.
 
-Rules to remember for defining overloaded constructors
-■ Overloaded constructors must be defined using different argument lists.
-■ Overloaded constructors can’t be defined by just a change in the access modifiers.
-■ Overloaded constructors can be defined using different access modifiers.
-■ A constructor can call another overloaded constructor by using the keyword this.
-■ A constructor can’t invoke a constructor by using its class’s name.
-■ If present, the call to another constructor must be the first statement in a
-constructor.
+overloaded constructors are invoked by using the keyword this
 
-Each instance initializer is invoked when an instance is created, in the order they’re defined in a class. They’re invoked before a class constructor is invoked.
+when you invoke an overloaded constructor using the keyword this, it must be the first statement in your constructor
 
-Recursive constructor invocation isn’t allowed: A constructor can’t call itself. If a class defines two overloaded constructors, A and B, A can’t call itself. Also, if A calls B, B can’t call A because it would again result in a recursive constructor call.
+If a parent or child class defines static initializer block(s), they execute before all parent and child class constructors and instance initializers—first for the parent and then for the child class.
 
-The static methods of a base can’t be overridden, but they can be hidden by defining methods with the same signature in the derived class.
+An overriding method can throw any unchecked exception (RuntimeException or Error) even if the overridden method doesn’t. The unchecked exceptions aren't part of the method signature and aren’t checked by the compiler.
 
-Virtual method invocation is the invocation of the correct overridden method, which is based on the type of the object referred to by an object reference and not by the object reference itself. It’s determined at runtime, not at compilation time.
+It’s the reference variable type that dictates which overloaded method will be chosen. This choice is made at compilation time.
 
-A derived class can’t override a base class method marked final.
+When a class extends another class, it can overload, override, or hide its base class methods. A class can’t override or hide its own methods—it can only overload its own methods.
 
-When the overriding method returns a subclass of the return type of the overridden method, it’s known as a covariant return type.
+Constructors can’t be overridden because a base class constructor isn’t inherited by a derived class.
 
-If a derived class defines a static method with the same name and signature as the one defined in its base class, it hides its base class method and doesn’t override it.You can’t override static methods.
+Use Object as the parameter type to equals(). Using any other type will overload equals().
 
-The static methods are bound at compile time.
+An inappropriately overridden method equals() doesn’t mean compilation failure.
 
-It’s important to override the nonfinal Object class methods (clone(), finalize(), toString(), equals(), hashCode() ) so that these classes can be used efficiently by other users.
-
-You can assign a reference variable of a derived class to a reference variable of its own type, its base classes, and the interfaces that it implements.
-
-Implicit downcasting isn’t allowed. You can’t assign reference variables of a base class
-to reference variables of its derived classes or to the interfaces that it doesn’t implement.
+In the absence of explicit casting, you’ll never get ClassCast-Exception—a RuntimeException. (explanation: At runtime, Java can determine the exact type of the object being casted. It throws a ClassCastException if you’re trying to cast types that aren’t allowed.)
