@@ -34,3 +34,16 @@ If a derived class defines a static method with the same name and signature as t
 The static methods are bound at compile time.
 
 It’s important to override the nonfinal Object class methods (clone(), finalize(), toString(), equals(), hashCode() ) so that these classes can be used efficiently by other users.
+
+■ An instance can be implicitly casted to its superclasses or interfaces that it implements.
+■ An instance of a nonfinal class can be explicitly casted to any interface at compile time.
+■ Classes in the same inheritance tree can be casted to each other using explicit casting at compile time.
+■ Objects of classes that don’t form part of the same inheritance tree cannot be casted.
+■ Casting to an interface is successful at runtime if the class implements the interface.
+■ Casting to a derived class type is successful at runtime if the casted object is actually a type of the derived class to which it’s casted.
+
+The import statement doesn’t embed the contents of the imported class in your class, which means that importing more classes doesn’t increase the size of your own class. It lets you use the simple name for a class or interface defined in a separate package.
+
+It’s possible to use a class or interface from a package without using the import statement by using its fully qualified name.
+
+You can’t use the import statement to use multiple classes or interfaces with the same names from different packages (cannot import together java.util.Date and java.sql.Date in the same file; they have to be explicitly used, like java.util.Date date1;)
