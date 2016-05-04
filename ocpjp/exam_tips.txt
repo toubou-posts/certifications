@@ -43,3 +43,8 @@ The literal value null isn’t an instance of any class. So <referenceVariable> 
 Members of a named package can’t access classes and interfaces defined in the default package.
 
 This feature is called static imports, but syntax is import static.
+
+---
+
+CHAPTER 2  ADVANCED CLASS DESIGN
+An abstract method can’t be defined in a concrete class. It can be defined in an abstract class only.
