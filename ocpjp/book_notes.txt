@@ -39,3 +39,19 @@ You can assign a reference variable of a derived class to a reference variable o
 
 Implicit downcasting isn’t allowed. You can’t assign reference variables of a base class
 to reference variables of its derived classes or to the interfaces that it doesn’t implement.
+
+Neither static class methods nor static class variables can access the nonstatic instance variables and instance methods of a class. But the reverse is true: nonstatic variables and methods can access static variables and methods because the static members of a class exist even if no instances of the class exist. Static members are forbidden from accessing instance methods and variables, which can exist only if an instance of the class is created.
+
+An instance initializer block can refer to a static variable before it is declared, because static variables are made available when a class is loaded in memory, which happens before initialization of objects of its class.
+
+You can’t prefix the definition of a top-level class or an interface with the keyword static. But you can define a class and an interface as a static member of another class.
+
+A final class cannot be subclassed.
+A final method doesn't let any of its subclasses to override it.
+A final variable cannot be reassigned another value, after the variable is initialized.
+
+Static initializer blocks, is guaranteed to execute only once for a class.
+
+Because a static method can be called multiple times, it can’t define code to initialize a final (static) variable. Same stands for a class constructor.
+
+Though you can initialize a final instance variable in the class’s constructor or its instance initializer block, you can’t initialize it in an instance method. Instance methods can execute more than once.

@@ -23,3 +23,24 @@ When a class extends another class, it can overload, override, or hide its base 
 Constructors can’t be overridden because a base class constructor isn’t inherited by a derived class.
 
 Read the questions on method hashCode() carefully. You might be questioned on incorrect, inappropriate, or inefficient overriding of hashCode().
+
+In the absence of explicit casting, you’ll never get ClassCast-Exception—a RuntimeException.
+
+CHAPTER 2
+An abstract method can’t be defined in a concrete class. It can be defined in an abstract class only.
+
+Abstract classes make a point loud and clear: they force the concrete derived classes to implement a base class’s abstract methods, in their own unique manner.
+
+A final class can’t be extended.
+
+Nonabstract classes cannot define abstract methods.
+
+Unlike instance variables, which are initialized for each instance, static class variables are initialized only once, when they are loaded into memory.
+
+The static methods can’t access nonstatic fields or nonstatic methods.
+
+A static method is used to manipulate static class variables or to define utility methods. A utility method may or may not accept method parameters.
+
+If a class defines multiple initializer blocks, they execute in the order of their appearance in a class.
+
+If a static or instance variable is marked final, it must be initialized, or the code won’t compile.
