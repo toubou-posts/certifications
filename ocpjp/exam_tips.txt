@@ -44,3 +44,28 @@ A static method is used to manipulate static class variables or to define utilit
 If a class defines multiple initializer blocks, they execute in the order of their appearance in a class.
 
 If a static or instance variable is marked final, it must be initialized, or the code won’t compile.
+=======
+Use Object as the parameter type to equals(). Using any other type will overload equals().
+
+An inappropriately overridden method equals() doesn’t mean compilation failure.
+
+In the absence of explicit casting, you’ll never get ClassCast-Exception—a RuntimeException. (explanation: At runtime, Java can determine the exact type of the object being casted. It throws a ClassCastException if you’re trying to cast types that aren’t allowed.)
+
+Class String is defined as a final class. Watch out for questions that explicitly cast String objects to interfaces they don’t implement. They won’t compile.
+
+You can explicitly cast null to any type. It won’t generate a compilation error or throw a ClassCastException.
+
+If you cast an instance to a class outside its inheritance tree, you’ll get a compiler error. If you cast an instance to a class within its inheritance tree, but the types don’t match at runtime, the code will throw a ClassCastException.
+
+The operator instanceof returns false if the reference variable being compared to is null.
+
+The instanceof operator never throws a runtime exception; it returns either true or false. If the instanceof operator uses inconvertible types, the code won’t compile.
+
+The literal value null isn’t an instance of any class. So <referenceVariable> instanceof <ClassName> will return false whenever the <referenceVariable> is null.
+
+Members of a named package can’t access classes and interfaces defined in the default package.
+
+This feature is called static imports, but syntax is import static.
+
+---
+
