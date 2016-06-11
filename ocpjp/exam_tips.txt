@@ -31,7 +31,11 @@ An abstract method can’t be defined in a concrete class. It can be defined in 
 
 Abstract classes make a point loud and clear: they force the concrete derived classes to implement a base class’s abstract methods, in their own unique manner.
 
+Code snippets that try to reinitialize a final variable won’t compile.
+
 A final class can’t be extended.
+
+The private methods of a base class aren’t inherited by its derived classes. A method using the same signature in the derived class isn’t an overridding method, but a new method.
 
 Nonabstract classes cannot define abstract methods.
 
